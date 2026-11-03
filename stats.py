@@ -1,4 +1,5 @@
 import collections
+import datetime
 import json
 import os
 import re
@@ -10,9 +11,9 @@ EMAIL = "borjacastellano1@gmail.com"
 WORK_REPOS = ["dashpay/rust-dashcore", "dashpay/platform"]
 OWN_REPOS = ["ZocoLini/fee", "ZocoLini/ezffi", "ZocoLini/cuqdyn-c"]
 PRIVATE_PROJECTS = [
-    ("Custora", "noesisbit/zaisei", "app/", "private, freelance"),
-    ("aesmeralda", "noesisbit/esmeralda", "admin/", "private, freelance"),
-    ("salinasdoullo", "noesisbit/salinasdoullo", "web/", "private, freelance"),
+    ("Custora", "noesisbit/zaisei", "app/"),
+    ("aesmeralda", "noesisbit/esmeralda", "admin/"),
+    ("salinasdoullo", "noesisbit/salinasdoullo", "web/"),
 ]
 
 
@@ -52,31 +53,39 @@ def gitlab_commits():
     return len(commits)
 
 
+def day(date):
+    return datetime.date.fromisoformat(date[:10]).strftime("%b %-d, %Y")
+
+
 def work_release(repo):
     releases = [r for r in github(f"/repos/{repo}/releases?per_page=100") if not r["prerelease"]]
     for new, old in zip(releases, releases[1:]):
         window = f"{old['published_at']}..{new['published_at']}"
         if github_total("issues", f"repo:{repo}+author:ZocoLini+type:pr+is:merged+merged:{window}"):
-            return f"[{repo}](https://github.com/{repo})", f"[{new['tag_name']}]({new['html_url']})", new["published_at"][:10]
+            return repo, new["tag_name"], new["html_url"], new["published_at"]
 
 
 def own_release(repo):
     tag = github(f"/repos/{repo}/tags?per_page=1")[0]
     date = github(f"/repos/{repo}/commits/{tag['commit']['sha']}")["commit"]["committer"]["date"]
-    link = f"https://github.com/{repo}/releases/tag/{tag['name']}"
-    return f"[{repo.split('/')[1]}](https://github.com/{repo})", f"[{tag['name']}]({link})", date[:10]
+    return repo, tag["name"], f"https://github.com/{repo}/releases/tag/{tag['name']}", date
 
 
-def private_release(name, path, prefix, label):
+def private_release(name, path, prefix):
     tags, _ = gitlab(f"/projects/{urllib.parse.quote(path, safe='')}/repository/tags?search={urllib.parse.quote('^' + prefix)}&order_by=updated")
-    return f"{name} *({label})*", tags[0]["name"], tags[0]["commit"]["committed_date"][:10]
+    return name, tags[0]["name"], tags[0]["commit"]["committed_date"]
 
 
 def releases():
-    rows = [work_release(r) for r in WORK_REPOS] + [own_release(r) for r in OWN_REPOS]
-    rows += [private_release(*p) for p in PRIVATE_PROJECTS]
-    rows = sorted(filter(None, rows), key=lambda row: row[2], reverse=True)
-    return "| Project | Release | Date |\n|---|---|---|\n" + "\n".join(f"| {' | '.join(row)} |" for row in rows)
+    public = [work_release(r) for r in WORK_REPOS] + [own_release(r) for r in OWN_REPOS]
+    public = sorted(filter(None, public), key=lambda r: r[3], reverse=True)
+    private = sorted((private_release(*p) for p in PRIVATE_PROJECTS), key=lambda r: r[2], reverse=True)
+    lines = [
+        f"* **[{repo.split('/')[1]}](https://github.com/{repo})** [`{tag.split('/')[-1]}`]({link}) · {day(date)}"
+        for repo, tag, link, date in public
+    ]
+    lines += [f"* **{name}** `{tag.split('/')[-1]}` · {day(date)} · *freelance, private repo*" for name, tag, date in private]
+    return "\n".join(lines)
 
 
 def open_source():
@@ -89,11 +98,11 @@ def open_source():
         if len(items) < 100:
             break
         page += 1
-    rows = "\n".join(
-        f"| [{repo}](https://github.com/{repo}) | [{count}](https://github.com/{repo}/pulls?q=is%3Apr+is%3Amerged+author%3AZocoLini) |"
+    return "\n".join(
+        f"* **[{repo.split('/')[1]}](https://github.com/{repo})** · "
+        f"[{count} merged PRs](https://github.com/{repo}/pulls?q=is%3Apr+is%3Amerged+author%3AZocoLini)"
         for repo, count in repos.most_common()
     )
-    return "| Project | Merged PRs |\n|---|---|\n" + rows
 
 
 def fill(readme, marker, text):
