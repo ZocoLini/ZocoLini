@@ -31,15 +31,4 @@ My own projects:
 
 ![Live CI status](https://portfolio.bcastellano.com/runners.svg)
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ZocoLini/ZocoLini/output/snake-dark.svg">
-    <img alt="Contribution graph eaten by a snake" src="https://raw.githubusercontent.com/ZocoLini/ZocoLini/output/snake.svg">
-  </picture>
-</p>
-
-<p align="center">
-  <a href="https://portfolio.bcastellano.com"><img alt="Tech stack" height="32" src="https://skillicons.dev/icons?i=rust,java,c,cpp,python,matlab,spring,postgres,redis,docker,linux,cmake,githubactions"></a>
-</p>
-
 More on my [portfolio](https://portfolio.bcastellano.com) and [LinkedIn](https://www.linkedin.com/in/borja-cas/).
