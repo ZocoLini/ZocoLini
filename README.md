@@ -1,6 +1,6 @@
 Hi! I'm Borja, a software engineer and mathematician.
 
-I've led freelance projects for clients of all kinds and run their deployments, taken part in scientific research with CSIC and CESGA, and led the development of HPC software. These days I work with [Dash Core Group](https://github.com/dashpay) on their SDK, designing some of its key components. Rust and Java are my main languages, and I care about code that is fast and easy to maintain.
+I've led freelance projects for clients of all kinds and run their deployments, taken part in scientific research with CSIC and CESGA, and led the development of HPC software. These days I work with [Dash Core Group](https://github.com/dashpay) on their SDK, designing some of its key components. Rust and Java are my main languages, and what I love is software that is beautiful in its design, its architecture, how it reads and how it scales, built on original solutions that feel almost like magic. That's the software I write.
 
 My own projects:
 
