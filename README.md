@@ -11,27 +11,23 @@ My own projects:
 ### Latest releases I worked on
 
 <!-- releases -->
-| Project | Release | Date |
-|---|---|---|
-| Custora *(private, freelance)* | app/v0.24.7 | 2026-11-01 |
-| salinasdoullo *(private, freelance)* | web/v0.2.0 | 2026-10-27 |
-| [dashpay/platform](https://github.com/dashpay/platform) | [v5.0.0](https://github.com/dashpay/platform/releases/tag/v5.0.0) | 2026-10-26 |
-| [dashpay/rust-dashcore](https://github.com/dashpay/rust-dashcore) | [v0.45.0](https://github.com/dashpay/rust-dashcore/releases/tag/v0.45.0) | 2026-10-21 |
-| [fee](https://github.com/ZocoLini/fee) | [v0.3.0](https://github.com/ZocoLini/fee/releases/tag/v0.3.0) | 2026-09-23 |
-| aesmeralda *(private, freelance)* | admin/v0.4.0 | 2026-08-18 |
-| [ezffi](https://github.com/ZocoLini/ezffi) | [v0.1.1](https://github.com/ZocoLini/ezffi/releases/tag/v0.1.1) | 2026-05-27 |
-| [cuqdyn-c](https://github.com/ZocoLini/cuqdyn-c) | [sacess/v0.2.0](https://github.com/ZocoLini/cuqdyn-c/releases/tag/sacess/v0.2.0) | 2025-06-04 |
+* **[platform](https://github.com/dashpay/platform)** [`v5.0.0`](https://github.com/dashpay/platform/releases/tag/v5.0.0) · Oct 26, 2026
+* **[rust-dashcore](https://github.com/dashpay/rust-dashcore)** [`v0.45.0`](https://github.com/dashpay/rust-dashcore/releases/tag/v0.45.0) · Oct 21, 2026
+* **[fee](https://github.com/ZocoLini/fee)** [`v0.3.0`](https://github.com/ZocoLini/fee/releases/tag/v0.3.0) · Sep 23, 2026
+* **[ezffi](https://github.com/ZocoLini/ezffi)** [`v0.1.1`](https://github.com/ZocoLini/ezffi/releases/tag/v0.1.1) · May 27, 2026
+* **[cuqdyn-c](https://github.com/ZocoLini/cuqdyn-c)** [`v0.2.0`](https://github.com/ZocoLini/cuqdyn-c/releases/tag/sacess/v0.2.0) · Jun 4, 2025
+* **Custora** `v0.24.7` · Nov 1, 2026 · *freelance, private repo*
+* **salinasdoullo** `v0.2.0` · Oct 27, 2026 · *freelance, private repo*
+* **aesmeralda** `v0.4.0` · Aug 18, 2026 · *freelance, private repo*
 <!-- /releases -->
 
 ### Open source contributions
 
 <!-- open-source -->
-| Project | Merged PRs |
-|---|---|
-| [arialang/aria](https://github.com/arialang/aria) | [10](https://github.com/arialang/aria/pulls?q=is%3Apr+is%3Amerged+author%3AZocoLini) |
+* **[aria](https://github.com/arialang/aria)** · [10 merged PRs](https://github.com/arialang/aria/pulls?q=is%3Apr+is%3Amerged+author%3AZocoLini)
 <!-- /open-source -->
 
-<!-- stats -->282 merged PRs and 1,333 commits on GitHub, plus 385 commits on GitLab.<!-- /stats -->
+<!-- stats -->283 merged PRs and 1,335 commits on GitHub, plus 385 commits on GitLab.<!-- /stats -->
 
 ![GitHub metrics](metrics.svg)
 
