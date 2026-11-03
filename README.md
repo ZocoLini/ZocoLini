@@ -29,6 +29,8 @@ My own projects:
 
 ![GitHub metrics](metrics.svg)
 
+![Live CI status](https://portfolio.bcastellano.com/runners.svg)
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ZocoLini/ZocoLini/output/snake-dark.svg">
