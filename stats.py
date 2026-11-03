@@ -7,7 +7,6 @@ import urllib.parse
 import urllib.request
 
 GITLAB = "https://gitlab.com/api/v4"
-EMAIL = "borjacastellano1@gmail.com"
 WORK_REPOS = ["dashpay/rust-dashcore", "dashpay/platform"]
 OWN_REPOS = ["ZocoLini/fee", "ZocoLini/ezffi", "ZocoLini/cuqdyn-c"]
 PRIVATE_PROJECTS = [
@@ -33,24 +32,6 @@ def github_total(kind, query):
 
 def gitlab(path):
     return get(f"{GITLAB}{path}", {"PRIVATE-TOKEN": os.environ["GITLAB_TOKEN"]})
-
-
-def gitlab_pages(path):
-    page = "1"
-    while page:
-        sep = "&" if "?" in path else "?"
-        items, headers = gitlab(f"{path}{sep}per_page=100&page={page}")
-        yield from items
-        page = headers.get("X-Next-Page")
-
-
-def gitlab_commits():
-    author = urllib.parse.quote(EMAIL)
-    commits = set()
-    for project in gitlab_pages("/projects?membership=true&simple=true"):
-        path = f"/projects/{project['id']}/repository/commits?all=true&author={author}"
-        commits |= {c["id"] for c in gitlab_pages(path) if c["author_email"] == EMAIL}
-    return len(commits)
 
 
 def day(date):
@@ -109,13 +90,7 @@ def fill(readme, marker, text):
     return re.sub(rf"<!-- {marker} -->.*<!-- /{marker} -->", f"<!-- {marker} -->{text}<!-- /{marker} -->", readme, flags=re.S)
 
 
-prs = github_total("issues", "author:ZocoLini+type:pr+is:merged")
-commits = github_total("commits", "author:ZocoLini")
-
-line = f"{prs:,} merged PRs and {commits:,} commits on GitHub, plus {gitlab_commits():,} commits on GitLab."
 readme = open("README.md").read()
-readme = fill(readme, "stats", line)
 readme = fill(readme, "releases", f"\n{releases()}\n")
 readme = fill(readme, "open-source", f"\n{open_source()}\n")
 open("README.md", "w").write(readme)
-print(line)

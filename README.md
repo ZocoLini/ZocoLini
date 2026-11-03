@@ -27,8 +27,11 @@ My own projects:
 * **[aria](https://github.com/arialang/aria)** · [10 merged PRs](https://github.com/arialang/aria/pulls?q=is%3Apr+is%3Amerged+author%3AZocoLini)
 <!-- /open-source -->
 
+<<<<<<< Updated upstream
 <!-- stats -->283 merged PRs and 1,335 commits on GitHub, plus 385 commits on GitLab.<!-- /stats -->
 
+=======
+>>>>>>> Stashed changes
 ![GitHub metrics](metrics.svg)
 
 <p align="center">
