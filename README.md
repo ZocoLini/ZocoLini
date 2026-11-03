@@ -29,6 +29,8 @@ My own projects:
 
 ![GitHub metrics](metrics.svg)
 
-![Live CI status](https://portfolio.bcastellano.com/runners.svg)
+![Live CI status](https://portfolio.bcastellano.com/runners.svg "Live status of my CI: self-hosted GitLab runners and the GitHub Actions workflows triggered by my work, refreshed every minute")
+
+![Uptime](https://portfolio.bcastellano.com/uptime.svg "Average 30-day uptime of the services I run for freelance and personal projects, checked every minute")
 
 More on my [portfolio](https://portfolio.bcastellano.com) and [LinkedIn](https://www.linkedin.com/in/borja-cas/).
