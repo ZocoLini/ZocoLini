@@ -16,7 +16,7 @@ My own projects:
 * **[fee](https://github.com/ZocoLini/fee)** [`v0.3.0`](https://github.com/ZocoLini/fee/releases/tag/v0.3.0) · Sep 23, 2026
 * **[ezffi](https://github.com/ZocoLini/ezffi)** [`v0.1.1`](https://github.com/ZocoLini/ezffi/releases/tag/v0.1.1) · May 27, 2026
 * **[cuqdyn-c](https://github.com/ZocoLini/cuqdyn-c)** [`v0.2.0`](https://github.com/ZocoLini/cuqdyn-c/releases/tag/sacess/v0.2.0) · Jun 4, 2025
-* **Custora** `v0.24.9` · Nov 10, 2026 · *freelance, private repo*
+* **Custora** `v0.25.0` · Nov 11, 2026 · *freelance, private repo*
 * **salinasdoullo** `v0.2.0` · Oct 27, 2026 · *freelance, private repo*
 * **aesmeralda** `v0.4.0` · Aug 18, 2026 · *freelance, private repo*
 <!-- /releases -->
