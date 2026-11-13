@@ -11,12 +11,12 @@ My own projects:
 ### Latest releases I worked on
 
 <!-- releases -->
+* **[rust-dashcore](https://github.com/dashpay/rust-dashcore)** [`v0.46.0`](https://github.com/dashpay/rust-dashcore/releases/tag/v0.46.0) · Nov 13, 2026
 * **[platform](https://github.com/dashpay/platform)** [`v5.0.0`](https://github.com/dashpay/platform/releases/tag/v5.0.0) · Oct 26, 2026
-* **[rust-dashcore](https://github.com/dashpay/rust-dashcore)** [`v0.45.0`](https://github.com/dashpay/rust-dashcore/releases/tag/v0.45.0) · Oct 21, 2026
 * **[fee](https://github.com/ZocoLini/fee)** [`v0.3.0`](https://github.com/ZocoLini/fee/releases/tag/v0.3.0) · Sep 23, 2026
 * **[ezffi](https://github.com/ZocoLini/ezffi)** [`v0.1.1`](https://github.com/ZocoLini/ezffi/releases/tag/v0.1.1) · May 27, 2026
 * **[cuqdyn-c](https://github.com/ZocoLini/cuqdyn-c)** [`v0.2.0`](https://github.com/ZocoLini/cuqdyn-c/releases/tag/sacess/v0.2.0) · Jun 4, 2025
-* **Custora** `v0.25.0` · Nov 11, 2026 · *freelance, private repo*
+* **Custora** `v0.25.1` · Nov 12, 2026 · *freelance, private repo*
 * **salinasdoullo** `v0.2.0` · Oct 27, 2026 · *freelance, private repo*
 * **aesmeralda** `v0.4.0` · Aug 18, 2026 · *freelance, private repo*
 <!-- /releases -->
